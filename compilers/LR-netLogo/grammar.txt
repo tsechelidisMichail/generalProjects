@@ -1,0 +1,13 @@
+ProcDef ::= Procedure ProcDef | ε 
+Procedure ::= "to" ProcFunN Body "end'' | "to-report" ProcFunN Body "end"
+ProcFunN ::= "name" "[" Vars "]"
+Vars ::= ε | "var" Vars
+Body ::= Command | Command Body
+Command ::= "if" Call "[" Body "]" | "report" VarNum | Call | "var" "<-" VarNum
+Call ::= "(" "name" Args ")"
+Args ::= VarNum Args | Call Args | ε
+VarNum ::= "var" | "num
+
+name smallcase
+var ?smallUpper
+num integer

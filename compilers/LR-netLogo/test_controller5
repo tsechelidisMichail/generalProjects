@@ -1,0 +1,4 @@
+control {
+    initialize
+    thermo = 10:switch-on cold 
+}

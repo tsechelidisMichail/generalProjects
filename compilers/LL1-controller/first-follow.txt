@@ -1,0 +1,14 @@
+First(Controller) = "control"
+First(Rules) = "initialize"
+First(Rules') = First(Rule) = First(Event) , "check-sys" = "thermo" , "check-sys"
+First(Rule) = First(Event) = "thermo"
+First(Event) = "thermo"
+First(Action) = "switch-on"
+/* First("*") = "*" */
+
+Follow(Controller) = EOF
+Follow(Rules) = "}"
+Follow(Rules') = Follow(Rules'), Follow(Rules) = "}"
+Follow(Rule) = First(Rules') = "thermo" , "check-sys"
+Follow(Event) = ":"
+Follow(Action) = Follow(Rule) = "thermo" , "check-sys"

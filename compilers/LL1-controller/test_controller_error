@@ -1,0 +1,8 @@
+control {
+    
+   check-sys
+   thermo < 10 < 2 : switch-on heat 
+   thermo > 40 : switch-on cold 
+   thermo = 20 : switch-on heat
+   check-sys 
+}

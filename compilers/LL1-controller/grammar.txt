@@ -1,0 +1,8 @@
+Controller ::= "control" “{“ Rules “}”
+Rules ::= Rules Rule | "initialize" 
+Rule ::= Event ":" Action | "check-sys"
+Event ::= "thermo" T_OP T_NUM
+Action ::= "switch-on" "heat" | "switch-on" "cold"
+
+T_OP = {>,<,=}
+T_NUM = integer
